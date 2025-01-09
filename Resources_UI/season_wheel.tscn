@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://h2o26iwtomx7"]
+
+[ext_resource type="Texture2D" uid="uid://megno8k5kqmi" path="res://Ressources/Seasons/SpringWheel.png" id="1_psv80"]
+[ext_resource type="Texture2D" uid="uid://c3ykx1keicrg8" path="res://Ressources/Seasons/SummerWheel.png" id="2_g34w2"]
+[ext_resource type="Texture2D" uid="uid://cc7cy8nc31qqe" path="res://Ressources/Seasons/AutumnWheel.png" id="3_mt31h"]
+[ext_resource type="Texture2D" uid="uid://ca3aodompggxn" path="res://Ressources/Seasons/WinterWheel.png" id="4_cq06x"]
+[ext_resource type="Texture2D" uid="uid://blibksu5l4r8p" path="res://Ressources/Seasons/Colorwheel_Outside.png" id="5_3ah3k"]
+
+[node name="Season_Wheel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpringBar" type="TextureProgressBar" parent="."]
+offset_right = 128.0
+offset_bottom = 128.0
+max_value = 120.0
+value = 120.0
+fill_mode = 4
+radial_initial_angle = 270.0
+radial_fill_degrees = 90.0
+texture_progress = ExtResource("1_psv80")
+
+[node name="SummerBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+max_value = 120.0
+value = 120.0
+fill_mode = 4
+radial_initial_angle = 180.0
+radial_fill_degrees = 90.0
+texture_progress = ExtResource("2_g34w2")
+
+[node name="AutumnBar" type="TextureProgressBar" parent="."]
+offset_right = 128.0
+offset_bottom = 128.0
+max_value = 120.0
+value = 120.0
+fill_mode = 4
+radial_initial_angle = 90.0
+radial_fill_degrees = 90.0
+texture_progress = ExtResource("3_mt31h")
+
+[node name="WinterBar" type="TextureProgressBar" parent="."]
+offset_right = 128.0
+offset_bottom = 128.0
+max_value = 120.0
+value = 120.0
+fill_mode = 4
+radial_fill_degrees = 90.0
+texture_progress = ExtResource("4_cq06x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(64, 64)
+texture = ExtResource("5_3ah3k")
