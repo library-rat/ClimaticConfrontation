@@ -1,20 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://h2o26iwtomx7"]
+[gd_scene load_steps=8 format=3 uid="uid://h2o26iwtomx7"]
 
 [ext_resource type="Texture2D" uid="uid://megno8k5kqmi" path="res://Ressources/Seasons/SpringWheel.png" id="1_psv80"]
+[ext_resource type="Script" path="res://Resources_UI/season_wheel.gd" id="1_qnvmk"]
 [ext_resource type="Texture2D" uid="uid://c3ykx1keicrg8" path="res://Ressources/Seasons/SummerWheel.png" id="2_g34w2"]
 [ext_resource type="Texture2D" uid="uid://cc7cy8nc31qqe" path="res://Ressources/Seasons/AutumnWheel.png" id="3_mt31h"]
 [ext_resource type="Texture2D" uid="uid://ca3aodompggxn" path="res://Ressources/Seasons/WinterWheel.png" id="4_cq06x"]
 [ext_resource type="Texture2D" uid="uid://blibksu5l4r8p" path="res://Ressources/Seasons/Colorwheel_Outside.png" id="5_3ah3k"]
+[ext_resource type="Texture2D" uid="uid://b3v77hgv6iov8" path="res://Ressources/Seasons/Cursor.png" id="6_isxp6"]
 
 [node name="Season_Wheel" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 387.0
+offset_top = 200.0
+offset_right = 387.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qnvmk")
 
 [node name="SpringBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
 max_value = 120.0
@@ -36,6 +44,7 @@ radial_fill_degrees = 90.0
 texture_progress = ExtResource("2_g34w2")
 
 [node name="AutumnBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
 max_value = 120.0
@@ -46,6 +55,7 @@ radial_fill_degrees = 90.0
 texture_progress = ExtResource("3_mt31h")
 
 [node name="WinterBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
 max_value = 120.0
@@ -54,6 +64,15 @@ fill_mode = 4
 radial_fill_degrees = 90.0
 texture_progress = ExtResource("4_cq06x")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Border" type="Sprite2D" parent="."]
 position = Vector2(64, 64)
 texture = ExtResource("5_3ah3k")
+
+[node name="Cursor" type="Sprite2D" parent="Border"]
+texture = ExtResource("6_isxp6")
+
+[node name="Daytimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Daytimer" to="." method="_on_daytimer_timeout"]
