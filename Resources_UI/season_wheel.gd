@@ -19,10 +19,11 @@ func _process(delta: float) -> void:
 
 func _on_daytimer_timeout() -> void:
 	day += 1
+	update_cursor_position()
+
+
+func update_cursor_position() ->void:
 	var currentAngle = float(day)/maxDay * 2*PI
 	timeCursor.position.x = wheelBorder.texture.get_size().x * -sin(currentAngle) * radiusFactor
 	timeCursor.position.y = wheelBorder.texture.get_size().y * -cos(currentAngle) * radiusFactor
 	timeCursor.rotation = -currentAngle
-	print(timeCursor.position)
-	print(day)
-	#timeCursor.position = Bor
