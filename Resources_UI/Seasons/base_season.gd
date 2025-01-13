@@ -2,7 +2,7 @@ extends Node
 
 class_name BaseSeason
 
-@export var duration : int
+@export var duration : int = 90
 
-func seasonEffect() -> void :
+func seasonEffect(ressources :GlobalRessources) -> void :
 	pass
