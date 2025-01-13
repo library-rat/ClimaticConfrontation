@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://jwalewdj5rdg"]
+
+[ext_resource type="Script" path="res://Gods/basic_god.gd" id="1_s2xkm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_427yo"]
+
+[node name="BasicGod" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s2xkm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Fire" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Fire"]
+layout_mode = 2
+text = "0"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/Fire"]
+layout_mode = 2
+
+[node name="Ice" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Ice"]
+layout_mode = 2
+text = "0"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/Ice"]
+layout_mode = 2
+
+[node name="Trickery" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Trickery"]
+layout_mode = 2
+text = "0"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/Trickery"]
+layout_mode = 2
+
+[node name="Wild" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Wild"]
+layout_mode = 2
+text = "0"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/Wild"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer"]
+sprite_frames = SubResource("SpriteFrames_427yo")
+
+[node name="Heraults" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2

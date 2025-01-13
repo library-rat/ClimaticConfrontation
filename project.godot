@@ -16,7 +16,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Enums="*res://Resources_UI/enums.gd"
+Enums="*res://Elements_UI/enums.gd"
 
 [rendering]
 
