@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://byd63q5ago8ws"]
+
+[ext_resource type="Script" path="res://Elements_UI/global_ressources.gd" id="1_ftt1p"]
+[ext_resource type="Texture2D" uid="uid://ccs3tbbyinvko" path="res://Ressources/Elements/defaultDevotionB.png" id="2_0tylt"]
+[ext_resource type="PackedScene" uid="uid://h2o26iwtomx7" path="res://Elements_UI/season_wheel.tscn" id="2_kxln5"]
+[ext_resource type="Texture2D" uid="uid://ba5p3mb17j7a3" path="res://Ressources/Elements/defaultDevotionW.png" id="3_umh36"]
+
+[node name="GlobalRessources" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ftt1p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Fire" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Fire"]
+layout_mode = 2
+text = "0"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Fire"]
+layout_mode = 2
+
+[node name="Ice" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Ice"]
+layout_mode = 2
+text = "0"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Ice"]
+layout_mode = 2
+
+[node name="Trickery" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Trickery"]
+layout_mode = 2
+text = "0"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Trickery"]
+layout_mode = 2
+
+[node name="Wild" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Wild"]
+layout_mode = 2
+text = "0"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Wild"]
+layout_mode = 2
+
+[node name="Devotion" type="TextureProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+value = 50.0
+texture_under = ExtResource("2_0tylt")
+texture_progress = ExtResource("3_umh36")
+
+[node name="Season_Wheel" parent="." node_paths=PackedStringArray("globalRessources") instance=ExtResource("2_kxln5")]
+layout_mode = 1
+offset_left = 447.0
+offset_top = 133.0
+offset_right = 447.0
+offset_bottom = 133.0
+globalRessources = NodePath("..")
