@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://kxsjfne6d8u1"]
+
+[ext_resource type="PackedScene" uid="uid://bjqmnp31hr2vh" path="res://Interventions/basic_intervention.tscn" id="1_own0y"]
+[ext_resource type="Script" path="res://Interventions/Fire/blaze.gd" id="2_4x3dd"]
+
+[node name="Blaze" instance=ExtResource("1_own0y")]
+script = ExtResource("2_4x3dd")

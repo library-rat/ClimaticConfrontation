@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Interventions/basic_intervention.gd" id="1_rffvv"]
 
 [node name="BasicIntervention" type="Control"]
+custom_minimum_size = Vector2(80, 30)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,12 +14,16 @@ script = ExtResource("1_rffvv")
 
 [node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(80, 20)
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Description" type="Panel" parent="."]
 visible = false
+z_index = 10
 layout_mode = 0
 offset_left = 5.0
 offset_top = 16.0
@@ -38,6 +43,7 @@ text = "Descrition of the intervention"
 [node name="DescriptionTimer" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
 [connection signal="timeout" from="DescriptionTimer" to="." method="_on_description_timer_timeout"]

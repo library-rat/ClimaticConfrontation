@@ -3,7 +3,7 @@ extends Control
 class_name GlobalRessources
 
 var elements : Array[float] = [0,0,0,20]
-
+var min_value : Array[float] = [0,0,0,10]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,8 +19,11 @@ func add_ressource(type : Enums.ElementType, value : float)->void:
 	update_values()
 
 func remove_ressource(type : Enums.ElementType, value : float)->void:
-	elements[type] = max(elements[type] - value, 0)
+	elements[type] = max(elements[type] - value, min_value[type])
 	update_values()
+
+func check_element(type : Enums.ElementType, value : float)->bool:
+	return elements[type] >= value
 
 func update_values() -> void :
 	$VBoxContainer/Fire/Label.text = str(elements[Enums.ElementType.FIRE]).pad_decimals(0)

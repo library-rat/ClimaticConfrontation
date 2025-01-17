@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://jwalewdj5rdg"]
+[gd_scene load_steps=6 format=3 uid="uid://jwalewdj5rdg"]
 
 [ext_resource type="Script" path="res://Gods/basic_god.gd" id="1_s2xkm"]
+[ext_resource type="PackedScene" uid="uid://bjqmnp31hr2vh" path="res://Interventions/basic_intervention.tscn" id="2_pcuni"]
+[ext_resource type="PackedScene" uid="uid://kxsjfne6d8u1" path="res://Interventions/Fire/blaze.tscn" id="3_3intb"]
+[ext_resource type="PackedScene" uid="uid://c8j8j8hb5a6hr" path="res://Interventions/Fire/talking_fires.tscn" id="4_kpwww"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_427yo"]
 
@@ -75,4 +78,30 @@ sprite_frames = SubResource("SpriteFrames_427yo")
 layout_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="BasicIntervention" parent="VBoxContainer/GridContainer" instance=ExtResource("2_pcuni")]
+layout_mode = 2
+cost = 50
+
+[node name="BasicIntervention2" parent="VBoxContainer/GridContainer" instance=ExtResource("2_pcuni")]
+layout_mode = 2
+type = 1
+cost = 60
+
+[node name="BasicIntervention3" parent="VBoxContainer/GridContainer" instance=ExtResource("2_pcuni")]
+layout_mode = 2
+type = 2
+cost = 70
+
+[node name="BasicIntervention4" parent="VBoxContainer/GridContainer" instance=ExtResource("2_pcuni")]
+layout_mode = 2
+type = 3
+cost = 80
+
+[node name="Blaze" parent="VBoxContainer/GridContainer" instance=ExtResource("3_3intb")]
+layout_mode = 2
+
+[node name="TalkingFires" parent="VBoxContainer/GridContainer" instance=ExtResource("4_kpwww")]
 layout_mode = 2
