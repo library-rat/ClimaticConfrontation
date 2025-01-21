@@ -37,7 +37,8 @@ func get_global_elements(type : Enums.ElementType) -> float :
 
 func remove_element(type :Enums.ElementType, value : float):
 	var value_left = value - globalRessources.elements[type]
-	elements[type] = elements[type] - value_left
+	if value_left > 0 :
+		elements[type] = elements[type] - value_left
 	update_values()
 
 func remove_global_element(type : Enums.ElementType, value : float):
