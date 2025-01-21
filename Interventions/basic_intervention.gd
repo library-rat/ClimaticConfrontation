@@ -9,6 +9,7 @@ var god : God
 func act():
 	if check_element(type,cost):
 		remove_element(type,cost)
+		god.update_values()
 
 
 func _on_button_mouse_entered() -> void:

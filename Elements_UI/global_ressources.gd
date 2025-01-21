@@ -2,8 +2,8 @@ extends Control
 
 class_name GlobalRessources
 
-var elements : Array[float] = [0,0,0,20]
-var min_value : Array[float] = [0,0,0,10]
+@export var elements : Array[float] = [0,0,0,20]
+@export var min_value : Array[float] = [0,0,0,10]
 
 @onready var stopButton : Button = $VBoxContainer/HBoxContainer/StopButton
 @onready var playButton : Button = $VBoxContainer/HBoxContainer/PlayButton

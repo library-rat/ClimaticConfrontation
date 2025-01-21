@@ -2,10 +2,10 @@ extends Control
 
 class_name God
 
-var elements : Array[float] = [0,0,0,0]
+@export var elements : Array[float] = [0,0,0,0]
 @onready var InterventionContainer = $VBoxContainer/GridContainer
 @export var globalRessources : GlobalRessources
-
+@export var otherGod : God
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
