@@ -62,10 +62,10 @@ func multiply_global_element(type :Enums.ElementType, value : float) -> void :
 	globalRessources.update_values()
 
 func add_devotion(value : float) -> void :
-	pass
+	globalRessources.add_devotion(value, self)
 
 func remove_devotion(value : float) -> void :
-	pass
+	globalRessources.remove_devotion(value, self)
 
 func update_values() -> void :
 	$VBoxContainer/HBoxContainer/VBoxContainer/Fire/Label.text = str(elements[Enums.ElementType.FIRE])

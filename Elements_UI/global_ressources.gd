@@ -5,6 +5,11 @@ class_name GlobalRessources
 @export var elements : Array[float] = [0,0,0,20]
 @export var min_value : Array[float] = [0,0,0,10]
 
+@export var devotion : float = 50. : set = _set_devotion
+
+
+@onready var gods : Array[God] = [$BasicGod,$BasicGod2]
+
 @onready var stopButton : Button = $VBoxContainer/HBoxContainer/StopButton
 @onready var playButton : Button = $VBoxContainer/HBoxContainer/PlayButton
 @onready var fastButton : Button = $VBoxContainer/HBoxContainer/FastButton
@@ -29,6 +34,29 @@ func remove_ressource(type : Enums.ElementType, value : float)->void:
 
 func check_element(type : Enums.ElementType, value : float)->bool:
 	return elements[type] >= value
+
+func _set_devotion(value : float) -> void :
+	if devotion >= 100 :
+		print("left win")
+	elif devotion <= 0 :
+		print("right win")
+	devotion = value
+
+func add_devotion(value : float, target : God) -> void :
+	var coef : int = 0
+	if (gods[0] == target) :
+		coef = 1
+	elif  (gods[1] == target) :
+		coef = -1
+	devotion += value * coef
+	
+func remove_devotion(value: float, target : God) -> void :
+	var coef : int = 0
+	if (gods[0] == target) :
+		coef = 1
+	elif  (gods[1] == target) :
+		coef = -1
+	devotion -= value * coef
 
 func update_values() -> void :
 	$VBoxContainer/Fire/Label.text = str(elements[Enums.ElementType.FIRE]).pad_decimals(0)
