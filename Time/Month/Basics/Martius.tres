@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="BaseMonth" load_steps=2 format=3 uid="uid://bko5irfe8d41l"]
+
+[ext_resource type="Script" uid="uid://d27i0oq6ci20p" path="res://Time/Month/base_month.gd" id="1_11ag6"]
+
+[resource]
+script = ExtResource("1_11ag6")
+metadata/_custom_type_script = "uid://d27i0oq6ci20p"

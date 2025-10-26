@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://jwalewdj5rdg"]
 
-[ext_resource type="Script" path="res://Gods/basic_god.gd" id="1_s2xkm"]
+[ext_resource type="Script" uid="uid://lv2xh5rokyl0" path="res://Gods/basic_god.gd" id="1_s2xkm"]
 [ext_resource type="PackedScene" uid="uid://bjqmnp31hr2vh" path="res://Interventions/basic_intervention.tscn" id="2_pcuni"]
 [ext_resource type="PackedScene" uid="uid://kxsjfne6d8u1" path="res://Interventions/Fire/blaze.tscn" id="3_3intb"]
 [ext_resource type="PackedScene" uid="uid://cn6cnh8b0fgbo" path="res://Interventions/Trickery/substitution.tscn" id="3_wxxij"]

@@ -1,12 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://h2o26iwtomx7"]
+[gd_scene load_steps=21 format=3 uid="uid://h2o26iwtomx7"]
 
 [ext_resource type="Texture2D" uid="uid://megno8k5kqmi" path="res://Ressources/Seasons/SpringWheel.png" id="1_psv80"]
-[ext_resource type="Script" path="res://Elements_UI/season_wheel.gd" id="1_qnvmk"]
+[ext_resource type="Script" uid="uid://dimkj3g878oij" path="res://Time/season_wheel.gd" id="1_qnvmk"]
 [ext_resource type="Texture2D" uid="uid://c3ykx1keicrg8" path="res://Ressources/Seasons/SummerWheel.png" id="2_g34w2"]
+[ext_resource type="Script" uid="uid://d27i0oq6ci20p" path="res://Time/Month/base_month.gd" id="2_yshb2"]
 [ext_resource type="Texture2D" uid="uid://cc7cy8nc31qqe" path="res://Ressources/Seasons/AutumnWheel.png" id="3_mt31h"]
+[ext_resource type="Resource" uid="uid://bqbv7shh4tikw" path="res://Time/Month/Basics/Primius.tres" id="3_sq4xy"]
 [ext_resource type="Texture2D" uid="uid://ca3aodompggxn" path="res://Ressources/Seasons/WinterWheel.png" id="4_cq06x"]
+[ext_resource type="Resource" uid="uid://2mfr8hjj2ldt" path="res://Time/Month/Basics/Secunda.tres" id="4_wv1g3"]
 [ext_resource type="Texture2D" uid="uid://blibksu5l4r8p" path="res://Ressources/Seasons/Colorwheel_Outside.png" id="5_3ah3k"]
+[ext_resource type="Resource" uid="uid://cy8nfaoirtn5o" path="res://Time/Month/Basics/Tertius.tres" id="5_hy18y"]
+[ext_resource type="Resource" uid="uid://dtylf8ymfrlqy" path="res://Time/Month/Basics/Quaternia.tres" id="6_fo5oc"]
 [ext_resource type="Texture2D" uid="uid://b3v77hgv6iov8" path="res://Ressources/Seasons/Cursor.png" id="6_isxp6"]
+[ext_resource type="Resource" uid="uid://dhtjm66v5pm7" path="res://Time/Month/Basics/Quintius.tres" id="7_sitib"]
+[ext_resource type="Resource" uid="uid://c5mgjiuerpber" path="res://Time/Month/Basics/Sextia.tres" id="8_wly8y"]
+[ext_resource type="Resource" uid="uid://bp3s0d63f4b0w" path="res://Time/Month/Basics/Septimius.tres" id="9_a0h61"]
+[ext_resource type="Resource" uid="uid://2dhglygib8wn" path="res://Time/Month/Basics/Octavia.tres" id="10_lh2yv"]
+[ext_resource type="Resource" uid="uid://bntjr3oyfshh6" path="res://Time/Month/Basics/Neunius.tres" id="11_7wwyg"]
+[ext_resource type="Resource" uid="uid://dxej4es3tjtmb" path="res://Time/Month/Basics/Dicimia.tres" id="12_8esqb"]
+[ext_resource type="Resource" uid="uid://qmglkc4cpnxh" path="res://Time/Month/Basics/Undecimius.tres" id="13_yaq18"]
+[ext_resource type="Resource" uid="uid://ug1k3eltddsn" path="res://Time/Month/Basics/Dodecimia.tres" id="14_jj45p"]
 
 [node name="Season_Wheel" type="Control"]
 layout_mode = 3
@@ -20,6 +33,7 @@ offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qnvmk")
+Months = Array[ExtResource("2_yshb2")]([ExtResource("3_sq4xy"), ExtResource("4_wv1g3"), ExtResource("5_hy18y"), ExtResource("6_fo5oc"), ExtResource("7_sitib"), ExtResource("8_wly8y"), ExtResource("9_a0h61"), ExtResource("10_lh2yv"), ExtResource("11_7wwyg"), ExtResource("12_8esqb"), ExtResource("13_yaq18"), ExtResource("14_jj45p")])
 
 [node name="SpringBar" type="TextureProgressBar" parent="."]
 layout_mode = 0

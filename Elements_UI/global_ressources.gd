@@ -49,7 +49,7 @@ func add_devotion(value : float, target : God) -> void :
 	elif  (gods[1] == target) :
 		coef = -1
 	devotion += value * coef
-	
+
 func remove_devotion(value: float, target : God) -> void :
 	var coef : int = 0
 	if (gods[0] == target) :

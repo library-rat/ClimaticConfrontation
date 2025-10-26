@@ -6,18 +6,24 @@ extends Control
 
 @export var globalRessources : GlobalRessources
 @export var radiusFactor :float = 1.4 *0.5
-var day : int = 0
-var maxDay : int = 360
+var day : int = 1 #current day in the month first is 1
+var maxDay : int = 360 
+var currentMonth : int = 0 #current month in the array (First month is 0)
+
 
 var timeCounter : float = 0
 @export var longDayDuration : float = 0.25
 @export var shortDayDuration : float = 0.05
 var currentDayDuration : float = longDayDuration
 
-@onready var Season : Array[BaseSeason] = [Spring.new(),Summer.new(),Autumn.new(),Winter.new()]
+@export var Months : Array[BaseMonth]
+#@onready var Season : Array[BaseSeason] = [Spring.new(),Summer.new(),Autumn.new(),Winter.new()]
+#
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	maxDay = 0
+	for i in range(Months.size()):
+		maxDay += Months[i].duration;
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,14 +38,11 @@ func _process(delta: float) -> void:
 
 
 func _on_new_day() -> void:
-	day =  (day +1)  % maxDay
+	day =  day +1
 	update_cursor_position()
-	var counter : int = 0
-	for i in range(Season.size()):
-		if  (Season[i].duration + counter > day) :
-			Season[i].seasonEffect(globalRessources)
-			break
-		counter += Season[i].duration
+	if (Months[currentMonth].duration < day) :
+		currentMonth = currentMonth +1 % Months.size();
+		day = 1
 
 
 func update_cursor_position() ->void:
