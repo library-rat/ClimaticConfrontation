@@ -3,7 +3,7 @@ extends Resource
 class_name BaseMonth
 
 @export var duration : int = 30
-@export var elements : Array[float] = [0,0,0,20]
+@export var elements : Array[float] = [0,0,0,0]
 
 var modifiers : Array[MonthModifier]
 

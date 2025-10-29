@@ -27,48 +27,48 @@ offset_bottom = 40.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Fire" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Abundance" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/Fire"]
+[node name="Label" type="Label" parent="VBoxContainer/Abundance"]
 layout_mode = 2
 text = "0"
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Fire"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Abundance"]
 layout_mode = 2
 
-[node name="Ice" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Devastation" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/Ice"]
+[node name="Label" type="Label" parent="VBoxContainer/Devastation"]
 layout_mode = 2
 text = "0"
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Ice"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Devastation"]
 layout_mode = 2
 
-[node name="Trickery" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Malice" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/Trickery"]
+[node name="Label" type="Label" parent="VBoxContainer/Malice"]
 layout_mode = 2
 text = "0"
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Trickery"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Malice"]
 layout_mode = 2
 
-[node name="Wild" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Might" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/Wild"]
+[node name="Label" type="Label" parent="VBoxContainer/Might"]
 layout_mode = 2
 text = "0"
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Wild"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Might"]
 layout_mode = 2
 
 [node name="Devotion" type="TextureProgressBar" parent="VBoxContainer"]

@@ -3,7 +3,7 @@ class_name Substitution
 
 
 func _ready() -> void:
-	type = Enums.ElementType.TRICKERY
+	#type = Enums.ElementType.TRICKERY
 	cost = 150
 	description.text = "Exchange personal elements between the gods"
 

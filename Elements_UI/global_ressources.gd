@@ -2,8 +2,8 @@ extends Control
 
 class_name GlobalRessources
 
-@export var elements : Array[float] = [0,0,0,20]
-@export var min_value : Array[float] = [0,0,0,10]
+@export var elements : Array[float] = [0,0,0,0]
+@export var min_value : Array[float] = [0,0,0,0]
 
 @export var devotion : float = 50. : set = _set_devotion
 
@@ -59,10 +59,10 @@ func remove_devotion(value: float, target : God) -> void :
 	devotion -= value * coef
 
 func update_values() -> void :
-	$VBoxContainer/Fire/Label.text = str(elements[Enums.ElementType.FIRE]).pad_decimals(0)
-	$VBoxContainer/Ice/Label.text = str(elements[Enums.ElementType.ICE]).pad_decimals(0)
-	$VBoxContainer/Trickery/Label.text = str(elements[Enums.ElementType.TRICKERY]).pad_decimals(0)
-	$VBoxContainer/Wild/Label.text = str(elements[Enums.ElementType.WILD]).pad_decimals(0)
+	$VBoxContainer/Abundance/Label.text = str(elements[Enums.ElementType.ABUNDANCE]).pad_decimals(0)
+	$VBoxContainer/Devastation/Label.text = str(elements[Enums.ElementType.DEVASTATION]).pad_decimals(0)
+	$VBoxContainer/Malice/Label.text = str(elements[Enums.ElementType.MALICE]).pad_decimals(0)
+	$VBoxContainer/Might/Label.text = str(elements[Enums.ElementType.MIGHT]).pad_decimals(0)
 
 
 func _on_stop_button_pressed() -> void:

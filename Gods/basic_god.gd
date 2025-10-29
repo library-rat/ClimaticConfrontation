@@ -68,7 +68,7 @@ func remove_devotion(value : float) -> void :
 	globalRessources.remove_devotion(value, self)
 
 func update_values() -> void :
-	$VBoxContainer/HBoxContainer/VBoxContainer/Fire/Label.text = str(elements[Enums.ElementType.FIRE])
-	$VBoxContainer/HBoxContainer/VBoxContainer/Ice/Label.text = str(elements[Enums.ElementType.ICE])
-	$VBoxContainer/HBoxContainer/VBoxContainer/Trickery/Label.text = str(elements[Enums.ElementType.TRICKERY])
-	$VBoxContainer/HBoxContainer/VBoxContainer/Wild/Label.text = str(elements[Enums.ElementType.WILD])
+	$VBoxContainer/HBoxContainer/VBoxContainer/Abundance/Label.text = str(elements[Enums.ElementType.ABUNDANCE])
+	$VBoxContainer/HBoxContainer/VBoxContainer/Devastation/Label.text = str(elements[Enums.ElementType.DEVASTATION])
+	$VBoxContainer/HBoxContainer/VBoxContainer/Malice/Label.text = str(elements[Enums.ElementType.MALICE])
+	$VBoxContainer/HBoxContainer/VBoxContainer/Might/Label.text = str(elements[Enums.ElementType.MIGHT])

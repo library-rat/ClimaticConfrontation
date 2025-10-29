@@ -3,7 +3,7 @@ extends Intervention
 var devotion_increase = 10
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	type = Enums.ElementType.FIRE
+	#type = Enums.ElementType.FIRE
 	cost = 30
 	description.text = "Increase devotion by %s" % devotion_increase
 
