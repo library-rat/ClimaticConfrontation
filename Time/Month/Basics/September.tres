@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="BaseMonth" load_steps=2 format=3 uid="uid://cos15rs5rna3g"]
+
+[ext_resource type="Script" uid="uid://d27i0oq6ci20p" path="res://Time/Month/base_month.gd" id="1_lnxs4"]
+
+[resource]
+script = ExtResource("1_lnxs4")
+elements = Array[float]([1.0, 0.0, 2.0, 0.0])
+metadata/_custom_type_script = "uid://d27i0oq6ci20p"
