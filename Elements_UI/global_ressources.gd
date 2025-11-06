@@ -32,6 +32,11 @@ func remove_ressource(type : Enums.ElementType, value : float)->void:
 	elements[type] = max(elements[type] - value, min_value[type])
 	update_values()
 
+func set_elements(new_elements : Array[float]):
+	for type in Enums.ElementType.values() :
+		elements[type] = new_elements[type]
+	update_values()
+
 func check_element(type : Enums.ElementType, value : float)->bool:
 	return elements[type] >= value
 

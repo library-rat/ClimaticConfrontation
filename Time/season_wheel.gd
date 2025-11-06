@@ -40,6 +40,7 @@ func _process(delta: float) -> void:
 func _on_new_day() -> void:
 	day =  day +1
 	update_cursor_position()
+	globalRessources.set_elements(Months[currentMonth].getElements())
 	if (Months[currentMonth].duration < day) :
 		currentMonth = currentMonth +1 % Months.size();
 		day = 1
