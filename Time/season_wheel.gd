@@ -6,7 +6,8 @@ extends Control
 
 @export var globalRessources : GlobalRessources
 @export var radiusFactor :float = 1.4 *0.5
-var day : int = 1 #current day in the month first is 1
+var mDay : int = 1 #current day in the month first is 1
+var yDay : int = 1 #current day in the year first is 1
 var maxDay : int = 360 
 var currentMonth : int = 0 #current month in the array (First month is 0)
 
@@ -38,16 +39,19 @@ func _process(delta: float) -> void:
 
 
 func _on_new_day() -> void:
-	day =  day +1
+	mDay =  mDay +1
+	yDay = yDay +1
+	if (Months[currentMonth].duration < mDay) :
+		currentMonth = (currentMonth +1) % Months.size();
+		mDay = 1
+	if(yDay > maxDay) :
+		yDay = 1
 	update_cursor_position()
 	globalRessources.set_elements(Months[currentMonth].getElements())
-	if (Months[currentMonth].duration < day) :
-		currentMonth = currentMonth +1 % Months.size();
-		day = 1
 
 
 func update_cursor_position() ->void:
-	var currentAngle = float(day)/maxDay * 2*PI
+	var currentAngle = float(yDay)/maxDay * 2*PI
 	timeCursor.position.x = wheelBorder.texture.get_size().x * -sin(currentAngle) * radiusFactor
 	timeCursor.position.y = wheelBorder.texture.get_size().y * -cos(currentAngle) * radiusFactor
 	timeCursor.rotation = -currentAngle
