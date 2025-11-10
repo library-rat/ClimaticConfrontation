@@ -1,4 +1,4 @@
-extends Control
+extends ElementManager
 
 
 @onready var timeCursor : Node = $Border/Cursor

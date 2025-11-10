@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8j8j8hb5a6hr"]
-
-[ext_resource type="PackedScene" uid="uid://bjqmnp31hr2vh" path="res://Interventions/basic_intervention.tscn" id="1_4fa5f"]
-[ext_resource type="Script" uid="uid://cc0jivtngyc07" path="res://Interventions/Fire/talking_fires.gd" id="2_sagxv"]
-
-[node name="TalkingFires" instance=ExtResource("1_4fa5f")]
-script = ExtResource("2_sagxv")

@@ -3,7 +3,7 @@ extends Resource
 class_name BaseMonth
 
 @export var duration : int = 30
-@export var elements : Array[float] = [0,0,0,0]
+@export var elements : Array[int] = [0,0,0,0]
 
 var modifiers : Array[MonthModifier]
 
@@ -16,5 +16,5 @@ func monthEffect(ressources :GlobalRessources) -> void :
 func endMonth():
 	pass
 
-func getElements() -> Array[float] :
+func getElements() -> Array[int] :
 	return elements

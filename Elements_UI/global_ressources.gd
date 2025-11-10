@@ -1,46 +1,28 @@
-extends Control
+extends ElementManager
 
 class_name GlobalRessources
 
-@export var elements : Array[float] = [0,0,0,0]
-@export var min_value : Array[float] = [0,0,0,0]
+@onready var gods : Array[God] = [$HBoxContainer/BasicGod,$HBoxContainer/BasicGod2]
 
-@export var devotion : float = 50. : set = _set_devotion
+@onready var stopButton : Button = $HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer/StopButton
+@onready var playButton : Button = $HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer/PlayButton
+@onready var fastButton : Button = $HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer/FastButton
 
-
-@onready var gods : Array[God] = [$BasicGod,$BasicGod2]
-
-@onready var stopButton : Button = $VBoxContainer/HBoxContainer/StopButton
-@onready var playButton : Button = $VBoxContainer/HBoxContainer/PlayButton
-@onready var fastButton : Button = $VBoxContainer/HBoxContainer/FastButton
-
-@onready var SeasonWheel : Control = $Season_Wheel
+@onready var SeasonWheel : Control = $HBoxContainer/VBoxContainer2/Season_Wheel
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
+func _ready() -> void:	
+	elements_label.insert(Enums.ElementType.ABUNDANCE,$HBoxContainer/VBoxContainer2/VBoxContainer/Abundance/Label)
+	elements_label.insert(Enums.ElementType.DEVASTATION,$HBoxContainer/VBoxContainer2/VBoxContainer/Devastation/Label)
+	elements_label.insert(Enums.ElementType.MALICE,$HBoxContainer/VBoxContainer2/VBoxContainer/Malice/Label)
+	elements_label.insert(Enums.ElementType.MIGHT,$HBoxContainer/VBoxContainer2/VBoxContainer/Might/Label)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
-func add_ressource(type : Enums.ElementType, value : float)->void:
-	elements[type] += value
-	update_values()
-
-func remove_ressource(type : Enums.ElementType, value : float)->void:
-	elements[type] = max(elements[type] - value, min_value[type])
-	update_values()
-
-func set_elements(new_elements : Array[float]):
-	for type in Enums.ElementType.values() :
-		elements[type] = new_elements[type]
-	update_values()
-
-func check_element(type : Enums.ElementType, value : float)->bool:
-	return elements[type] >= value
-
-func _set_devotion(value : float) -> void :
+func _set_devotion(value : int) -> void :
 	if devotion >= 100 :
 		print("left win")
 	elif devotion <= 0 :
@@ -62,13 +44,6 @@ func remove_devotion(value: float, target : God) -> void :
 	elif  (gods[1] == target) :
 		coef = -1
 	devotion -= value * coef
-
-func update_values() -> void :
-	$VBoxContainer/Abundance/Label.text = str(elements[Enums.ElementType.ABUNDANCE]).pad_decimals(0)
-	$VBoxContainer/Devastation/Label.text = str(elements[Enums.ElementType.DEVASTATION]).pad_decimals(0)
-	$VBoxContainer/Malice/Label.text = str(elements[Enums.ElementType.MALICE]).pad_decimals(0)
-	$VBoxContainer/Might/Label.text = str(elements[Enums.ElementType.MIGHT]).pad_decimals(0)
-
 
 func _on_stop_button_pressed() -> void:
 	SeasonWheel.setSpeedStop()

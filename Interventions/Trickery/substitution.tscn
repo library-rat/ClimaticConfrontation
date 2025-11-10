@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://cn6cnh8b0fgbo"]
-
-[ext_resource type="PackedScene" uid="uid://bjqmnp31hr2vh" path="res://Interventions/basic_intervention.tscn" id="1_6aojd"]
-[ext_resource type="Script" uid="uid://0dfgfopti3m7" path="res://Interventions/Trickery/substitution.gd" id="2_fl8uc"]
-
-[node name="Substitution" instance=ExtResource("1_6aojd")]
-script = ExtResource("2_fl8uc")

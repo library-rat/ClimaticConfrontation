@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bjqmnp31hr2vh"]
 
-[ext_resource type="Script" uid="uid://dqcq3glv23jb0" path="res://Interventions/basic_intervention.gd" id="1_rffvv"]
+[ext_resource type="Script" uid="uid://dqcq3glv23jb0" path="res://Manifestation/basic_manifestation.gd" id="1_l3uth"]
 
 [node name="BasicIntervention" type="Control"]
 custom_minimum_size = Vector2(80, 30)
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_rffvv")
+script = ExtResource("1_l3uth")
 
 [node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(80, 20)

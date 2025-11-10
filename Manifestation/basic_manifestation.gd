@@ -1,15 +1,16 @@
 extends Control
-class_name Intervention
+class_name Manifestation
 
-@export var type : Enums.ElementType
+@export var types : Array[Enums.ElementType]
 @export var cost : int
 var god : God
 @onready var description :RichTextLabel = $Description/RichTextLabel
 
 func act():
-	if check_element(type,cost):
-		remove_element(type,cost)
-		god.update_values()
+	for type in types :
+		if check_element(type,cost):
+			remove_element(type,cost)
+			god.update_values()
 
 
 func _on_button_mouse_entered() -> void:
