@@ -16,34 +16,18 @@ func _ready() -> void:
 	elements_label.insert(Enums.ElementType.DEVASTATION,$HBoxContainer/VBoxContainer2/VBoxContainer/Devastation/Label)
 	elements_label.insert(Enums.ElementType.MALICE,$HBoxContainer/VBoxContainer2/VBoxContainer/Malice/Label)
 	elements_label.insert(Enums.ElementType.MIGHT,$HBoxContainer/VBoxContainer2/VBoxContainer/Might/Label)
-
+	devotion_label = $HBoxContainer/VBoxContainer2/VBoxContainer/Devotion
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
+
 func _set_devotion(value : int) -> void :
-	if devotion >= 100 :
-		print("left win")
-	elif devotion <= 0 :
-		print("right win")
 	devotion = value
-
-func add_devotion(value : float, target : God) -> void :
-	var coef : int = 0
-	if (gods[0] == target) :
-		coef = 1
-	elif  (gods[1] == target) :
-		coef = -1
-	devotion += value * coef
-
-func remove_devotion(value: float, target : God) -> void :
-	var coef : int = 0
-	if (gods[0] == target) :
-		coef = 1
-	elif  (gods[1] == target) :
-		coef = -1
-	devotion -= value * coef
+	update_values()
+	if (devotion == 0):
+		print("GAME OVER")
 
 func _on_stop_button_pressed() -> void:
 	SeasonWheel.setSpeedStop()

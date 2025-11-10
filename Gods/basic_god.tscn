@@ -79,6 +79,10 @@ text = "0"
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/Might"]
 layout_mode = 2
 
+[node name="Devotion" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "0"
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer"]
 sprite_frames = SubResource("SpriteFrames_427yo")
 

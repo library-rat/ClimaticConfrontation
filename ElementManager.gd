@@ -2,10 +2,11 @@
 class_name ElementManager extends Control
 
 @export var elements : Array[int] = [0,0,0,0]
-@export var elements_label : Array[Control]
+@export var elements_label : Array[Label]
 @export var min_value : Array[int] = [0,0,0,0]
 
 @export var devotion : int = 50 : set = _set_devotion
+@export var devotion_label : Label
 
 func add_element(type : Enums.ElementType, value : int)->void:
 	elements[type] += value
@@ -28,8 +29,15 @@ func check_element(type : Enums.ElementType, value : int)->bool:
 
 func _set_devotion(value : int) -> void :
 	devotion = value
+	update_values()
+
+
+
+func convert_to(nb_followers :int, god : God ) -> void :
+	devotion -=  nb_followers
+	god.devotion += nb_followers
 
 func update_values() -> void :
 	for type in Enums.ElementType.values() :
-		elements_label[type].text = str(elements[type]).pad_decimals(0)
-	
+		elements_label[type].text = str(elements[type])
+	devotion_label.text = str(devotion)

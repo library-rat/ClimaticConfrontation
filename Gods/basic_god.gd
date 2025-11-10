@@ -14,7 +14,7 @@ func _ready() -> void:
 	elements_label.insert(Enums.ElementType.DEVASTATION,$VBoxContainer/HBoxContainer/VBoxContainer/Devastation/Label)
 	elements_label.insert(Enums.ElementType.MALICE,$VBoxContainer/HBoxContainer/VBoxContainer/Malice/Label)
 	elements_label.insert(Enums.ElementType.MIGHT,$VBoxContainer/HBoxContainer/VBoxContainer/Might/Label)
-
+	devotion_label = $VBoxContainer/HBoxContainer/VBoxContainer/Devotion
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
