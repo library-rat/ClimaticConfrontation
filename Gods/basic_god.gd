@@ -2,13 +2,13 @@ extends ElementManager
 
 class_name God 
 
-@onready var InterventionContainer = $VBoxContainer/GridContainer
+@onready var ManifestationContainer = $VBoxContainer/GridContainer
 @export var globalRessources : GlobalRessources
 @export var otherGod : God
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for child in InterventionContainer.get_children() :
+	for child in ManifestationContainer.get_children() :
 		child.god = self 
 	elements_label.insert(Enums.ElementType.ABUNDANCE,$VBoxContainer/HBoxContainer/VBoxContainer/Abundance/Label)
 	elements_label.insert(Enums.ElementType.DEVASTATION,$VBoxContainer/HBoxContainer/VBoxContainer/Devastation/Label)
@@ -27,24 +27,19 @@ func remove_ressource(type : Enums.ElementType, value : int)->void:
 func get_elements(type : Enums.ElementType) -> int:
 	return elements[type] + globalRessources.elements[type]
 
+func check_element(type : Enums.ElementType, value : int)->bool:
+	return elements[type] + globalRessources.elements[type] >= value
+
 func get_global_elements(type : Enums.ElementType) -> int :
 	return globalRessources.elements[type]
 
-func remove_element(type :Enums.ElementType, value : int):
-	var value_left = value - globalRessources.elements[type]
-	if value_left > 0 :
-		elements[type] = elements[type] - value_left
-	update_values()
+func pay_cost_element(type :Enums.ElementType, value : int):
+	remove_element(type, value)
 
 func remove_global_element(type : Enums.ElementType, value : float):
 	globalRessources.elements[type] = max(0, globalRessources.elements[type] - value)
 	globalRessources.update_values()
 
-func add_element(type :Enums.ElementType, value : int):
-	elements[type] = elements[type] + value
-	print("valeur de l'ajout %f" % value)
-	print("valeur de l'élément %f" % elements[type])
-	
 func add_global_element(type :Enums.ElementType, value : int):
 	globalRessources.elements[type] = globalRessources.elements[type] + value
 

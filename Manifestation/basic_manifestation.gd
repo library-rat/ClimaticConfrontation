@@ -7,9 +7,8 @@ var god : God
 
 func act():
 	for type in types :
-		if check_element(type,types[type]):
-			remove_element(type,types[type])
-			god.update_values()
+		if check_elements():
+			pay_cost_elements()
 
 
 func _on_button_mouse_entered() -> void:
@@ -24,12 +23,19 @@ func _on_button_mouse_exited() -> void:
 func _on_description_timer_timeout() -> void:
 	$Description.visible = true
 
-func check_element(type :Enums.ElementType, value : int) -> bool:
-	return god.check_element(type, value)
-
-func remove_element(type :Enums.ElementType, value : int) -> void :
-	god.remove_element(type,value)
+func check_elements() -> bool:
+	for type in types :
+		if ! god.check_element(type,types[type]):
+			return false
+	return true
 	
+func pay_cost_elements() -> void :
+	for type in types :
+		god.pay_cost_element(type,types[type])
+		
+func add_element_self(type : Enums.ElementType, value : int) -> void:
+	god.add_element(type, value)
+
 func remove_global_element(type : Enums.ElementType, value : int) -> void:
 	god.remove_global_element(type, value)
 

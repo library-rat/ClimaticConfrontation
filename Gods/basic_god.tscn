@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://jwalewdj5rdg"]
+[gd_scene load_steps=8 format=3 uid="uid://jwalewdj5rdg"]
 
 [ext_resource type="Script" uid="uid://lv2xh5rokyl0" path="res://Gods/basic_god.gd" id="1_s2xkm"]
 [ext_resource type="PackedScene" uid="uid://bjqmnp31hr2vh" path="res://Manifestation/basic_manifestation.tscn" id="2_pcuni"]
 [ext_resource type="PackedScene" uid="uid://kxsjfne6d8u1" path="res://Manifestation/Fire/blaze.tscn" id="3_3intb"]
-[ext_resource type="PackedScene" uid="uid://cn6cnh8b0fgbo" path="res://Manifestation/Trickery/substitution.tscn" id="3_wxxij"]
 [ext_resource type="PackedScene" uid="uid://c8j8j8hb5a6hr" path="res://Manifestation/Fire/talking_fires.tscn" id="4_kpwww"]
+[ext_resource type="PackedScene" uid="uid://20ddp157vpkm" path="res://Manifestation/megafauna.tscn" id="4_ov470"]
+[ext_resource type="Script" uid="uid://wmo5a27rl0iw" path="res://Manifestation/megafauna.gd" id="6_jesg1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_427yo"]
 
@@ -95,21 +96,19 @@ columns = 3
 
 [node name="BasicIntervention" parent="VBoxContainer/GridContainer" instance=ExtResource("2_pcuni")]
 layout_mode = 2
-cost = 50
 
 [node name="BasicIntervention2" parent="VBoxContainer/GridContainer" instance=ExtResource("2_pcuni")]
 layout_mode = 2
-cost = 60
 
 [node name="BasicIntervention3" parent="VBoxContainer/GridContainer" instance=ExtResource("2_pcuni")]
-layout_mode = 2
-cost = 70
-
-[node name="Substitution" parent="VBoxContainer/GridContainer" instance=ExtResource("3_wxxij")]
 layout_mode = 2
 
 [node name="Blaze" parent="VBoxContainer/GridContainer" instance=ExtResource("3_3intb")]
 layout_mode = 2
 
+[node name="Megafauna" parent="VBoxContainer/GridContainer" instance=ExtResource("4_ov470")]
+layout_mode = 2
+
 [node name="TalkingFires" parent="VBoxContainer/GridContainer" instance=ExtResource("4_kpwww")]
 layout_mode = 2
+script = ExtResource("6_jesg1")
