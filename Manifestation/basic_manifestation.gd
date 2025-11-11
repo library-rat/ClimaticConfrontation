@@ -1,15 +1,14 @@
 extends Control
 class_name Manifestation
 
-@export var types : Array[Enums.ElementType]
-@export var cost : int
+@export var types : Dictionary[Enums.ElementType,int]
 var god : God
 @onready var description :RichTextLabel = $Description/RichTextLabel
 
 func act():
 	for type in types :
-		if check_element(type,cost):
-			remove_element(type,cost)
+		if check_element(type,types[type]):
+			remove_element(type,types[type])
 			god.update_values()
 
 
